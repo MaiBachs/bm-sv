@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -19,7 +20,7 @@ public class Accounts {
     private Long accountBalance;
 
     @Column(name = "Date_Opened")
-    private java.sql.Date dateOpened;
+    private Date dateOpened;
 
     @Column(name = "password")
     private String password;
@@ -30,6 +31,10 @@ public class Accounts {
     @Column(name = "PINCode")
     private String pinCode;
 
-    @Column(name = "iNick")
+//    @Column(name = "iNick")
+    @Transient
     private String iNick;
+
+    @Column(name = "User_Name")
+    private String userName;
 }
