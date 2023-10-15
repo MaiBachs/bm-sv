@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -29,4 +30,7 @@ public class Customers {
 
     @Column(name = "Sex")
     private Character sex;
+
+    @Transient
+    private List<Loan> loans;
 }

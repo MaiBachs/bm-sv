@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -13,13 +14,10 @@ public class Loan {
     private Integer id;
 
     @Column(name = "Duration_in_Years")
-    private Long durationInYears;
+    private Date durationInYears;
 
     @Column(name = "Loan_Transaction_Date")
-    private java.sql.Date loanTransactionDate;
-
-    @Column(name = "Interest_Rate")
-    private Long interestRate;
+    private Date loanTransactionDate;
 
     @Column(name = "Loan_Amount_Taken")
     private Long loanAmountTaken;
@@ -27,9 +25,12 @@ public class Loan {
     @Column(name = "Loan_Amount_Repaid")
     private Long loanAmountRepaid;
 
-    @Column(name = "Loan_Type")
-    private String loanType;
+    @Column(name = "Repaid")
+    private String repaid;
 
     @Column(name = "Customer_id")
     private Integer customerId;
+
+    @Column(name = "interest_id")
+    private Integer interestId;
 }
