@@ -26,7 +26,7 @@ public class Loan {
     private Long loanAmountRepaid;
 
     @Column(name = "Repaid")
-    private String repaid;
+    private Long repaid;
 
     @Column(name = "Customer_id")
     private Integer customerId;

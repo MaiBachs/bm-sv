@@ -24,7 +24,8 @@ public class LoanService{
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH,  interest.getTerm());
         loan.setDurationInYears(cal.getTime());
-        loan.setLoanAmountRepaid((long) (loan.getLoanAmountTaken() * (interest.getTerm() / Constant.MONTH_OF_YEAR) * (interest.getPercent()/100)));
+        loan.setLoanAmountRepaid((long) ((loan.getLoanAmountTaken() * (interest.getTerm() / Constant.MONTH_OF_YEAR) * (interest.getPercent()/100)) + loan.getLoanAmountTaken()));
+        loan.setRepaid(0l);
         return loanRepository.save(loan);
     }
 }
