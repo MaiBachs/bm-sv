@@ -16,6 +16,10 @@ public class InterestService {
         return interestRepository.save(interest);
     }
 
+    public void deleteInterest(Interest interest){
+        interestRepository.delete(interest);
+    }
+
     public List<Interest> findAll(){
         return interestRepository.findAll();
     }

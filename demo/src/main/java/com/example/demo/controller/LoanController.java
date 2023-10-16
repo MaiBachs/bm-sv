@@ -27,6 +27,11 @@ public class LoanController {
         return interestService.save(interest);
     }
 
+    @DeleteMapping(path = "/delete-interest")
+    public void deleteInterest(@RequestBody Interest interest){
+        interestService.deleteInterest(interest);
+    }
+
     @GetMapping(path = "/find-by-cmnd")
     public Customers findByCmnd(@RequestParam("cmnd") String cmnd){
         return customersService.findByCmnd(cmnd);
@@ -40,5 +45,10 @@ public class LoanController {
     @PostMapping(path = "/customer-loan")
     public Loan customerLoan(@RequestBody Loan loan){
         return loanService.customerLoan(loan);
+    }
+
+    @PostMapping(path = "/customer-repaid")
+    public Loan customerPayment(@RequestBody Loan loan){
+        return loanService.customerPayment(loan);
     }
 }

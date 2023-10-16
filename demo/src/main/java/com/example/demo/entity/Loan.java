@@ -28,9 +28,18 @@ public class Loan {
     @Column(name = "Repaid")
     private Long repaid;
 
+    @Transient
+    private Long payment;
+
     @Column(name = "Customer_id")
     private Integer customerId;
 
     @Column(name = "interest_id")
     private Integer interestId;
+
+    @Column(name = "status")
+    private Integer status;
+
+    @Column(name = "updated_date")
+    private Date updatedDate;
 }
