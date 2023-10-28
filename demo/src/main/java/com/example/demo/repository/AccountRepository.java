@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AccountRepository extends JpaRepository<Accounts, Integer> {
     Accounts findByUserNameAndPasswordAndAccountType(String userName, String password, String accountType);
+
+    @Query("SELECT COUNT(a) FROM Accounts a")
+    long count();
 }
